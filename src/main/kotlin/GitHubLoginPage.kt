@@ -1,8 +1,11 @@
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.PageFactory
 
-class GitHubLoginPage: BasePage() {
+class GitHubLoginPage(
+    private val driver: WebDriver
+) {
 
     init {
         PageFactory.initElements(driver, this)

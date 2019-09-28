@@ -3,7 +3,7 @@ import org.testng.annotations.Test
 
 class LoginTest: BaseTest() {
 
-    val page = GitHubLoginPage()
+    val page = GitHubLoginPage(webDriver)
 
     @Test
     fun correctLogin(){

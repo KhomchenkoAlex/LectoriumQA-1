@@ -11,7 +11,7 @@ open class BaseTest {
     @BeforeClass
     fun setUp(){
         webDriver.get("https://github.com/login")
-        webDriver.manage().timeouts().implicitlyWait(45,TimeUnit.SECONDS)
+        webDriver.manage().timeouts().pageLoadTimeout(45,TimeUnit.SECONDS)
     }
 
 
