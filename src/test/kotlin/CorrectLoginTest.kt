@@ -5,12 +5,15 @@ class CorrectLoginTest: BaseTest() {
 
     val page = GitHubLoginPage(webDriver)
 
+    val login = "KhomchenkoAlex"
+    val password = "dozori35"
+
     @Test
     fun correctLogin(){
-        page.inputLogin("KhomchenkoAlex")
-        page.inputPassword("dozori35")
+        page.inputLogin(login)
+        page.inputPassword(password)
         page.submit()
-        Assert.assertTrue(webDriver.title == "GitHub")
+        Assert.assertEquals(webDriver.title, "GitHub")
     }
 
 }
