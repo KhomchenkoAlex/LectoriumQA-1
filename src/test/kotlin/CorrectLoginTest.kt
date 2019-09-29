@@ -1,7 +1,7 @@
 import org.testng.Assert
 import org.testng.annotations.Test
 
-class LoginTest: BaseTest() {
+class CorrectLoginTest: BaseTest() {
 
     val page = GitHubLoginPage(webDriver)
 
