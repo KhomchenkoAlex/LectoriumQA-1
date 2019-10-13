@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+
+    <test name="login">
+        <classes>
+            <class name="LoginTest">
+                <methods>
+                    <include name="incorrectLogin"/>
+                    <include name="correctLogin"/>
+                    <include name="searchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="search">
+
+
+    </test>
+</suite>

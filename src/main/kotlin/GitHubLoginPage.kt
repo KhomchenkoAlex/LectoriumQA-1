@@ -11,20 +11,22 @@ class GitHubLoginPage(
         PageFactory.initElements(driver, this)
     }
 
-    @FindBy(xpath = "//*[@id=\"login_field\"]")
+    @FindBy(xpath = "//input[@name=\"login\"]")
     private lateinit var  loginInput: WebElement
 
-    @FindBy(xpath = "//*[@id=\"password\"]")
+    @FindBy(xpath = "//input[@name=\"password\"]")
     private lateinit var passwordInput: WebElement
 
-    @FindBy(xpath = "//*[@id=\"login\"]/form/div[3]/input[8]")
+    @FindBy(xpath = "//input[@value=\"Sign in\"]")
     private lateinit var submitButton: WebElement
 
-    fun inputLogin(login: String) {
+    fun inputLogin(login: String?) {
+        loginInput.clear()
         loginInput.sendKeys(login)
     }
 
-    fun inputPassword(password: String) {
+    fun inputPassword(password: String?) {
+        passwordInput.clear()
         passwordInput.sendKeys(password)
     }
 
