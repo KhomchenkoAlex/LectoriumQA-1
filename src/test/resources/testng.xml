@@ -8,14 +8,18 @@
                 <methods>
                     <include name="incorrectLogin"/>
                     <include name="correctLogin"/>
-<!--                    <include name="searchTest"/>-->
                 </methods>
             </class>
         </classes>
     </test>
-
-    <test name="search">
-
+    <test name="Search">
+        <classes>
+            <class name="SearchTest">
+                <methods>
+                    <include name="searchTest"/>
+                </methods>
+            </class>
+        </classes>
 
     </test>
 </suite>

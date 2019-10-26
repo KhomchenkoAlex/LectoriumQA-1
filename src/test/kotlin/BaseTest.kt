@@ -15,12 +15,19 @@ open class BaseTest {
 
     var webDriver = ChromeDriver(chromeDriverService, chromeOptions)
 
+    fun implicitlyWait(durationInSeconds: Long) {
+        webDriver.manage().timeouts().implicitlyWait(durationInSeconds, TimeUnit.SECONDS)
+    }
+
+    fun pageLoadWait(durationInSeconds: Long) {
+        webDriver.manage().timeouts().pageLoadTimeout(durationInSeconds,TimeUnit.SECONDS)
+    }
+
     @BeforeSuite
     fun setUp(){
         webDriver.navigate().to("https://github.com")
-        webDriver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS)
+        pageLoadWait(5)
     }
-
 
     @AfterSuite
     fun tearDown(){
