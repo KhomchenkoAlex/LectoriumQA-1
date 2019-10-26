@@ -8,7 +8,7 @@
                 <methods>
                     <include name="incorrectLogin"/>
                     <include name="correctLogin"/>
-                    <include name="searchTest"/>
+<!--                    <include name="searchTest"/>-->
                 </methods>
             </class>
         </classes>

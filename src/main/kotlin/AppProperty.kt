@@ -1,14 +1,15 @@
-
-import java.io.FileInputStream
 import java.util.*
 
 object AppProperty {
-    private val inputStream =
-        FileInputStream( System.getProperty("user.dir") + "/src/test/resources/application.properties")
-    private val properties = Properties().also {
-        it.load(inputStream)
+    private val properties = Properties().apply {
+        Thread.currentThread()
+            .contextClassLoader
+            .getResourceAsStream("application.properties")
+            .let {
+                this.load(it)
+            }
     }
 
-    fun getProperty(propertyName: String): String? =
+    fun getPropertyByName(propertyName: String): String? =
         properties.getProperty(propertyName)
 }

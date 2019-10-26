@@ -2,8 +2,6 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeDriverService
 import org.openqa.selenium.chrome.ChromeOptions
 import org.testng.annotations.*
-import java.io.File
-import java.util.*
 import java.util.concurrent.TimeUnit
 
 open class BaseTest {
@@ -19,7 +17,7 @@ open class BaseTest {
 
     @BeforeSuite
     fun setUp(){
-        webDriver.navigate().to("https://github.com/login")
+        webDriver.navigate().to("https://github.com")
         webDriver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS)
     }
 

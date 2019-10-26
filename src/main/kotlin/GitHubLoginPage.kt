@@ -11,6 +11,8 @@ class GitHubLoginPage(
         PageFactory.initElements(driver, this)
     }
 
+    val loginPageUrl = "https://github.com/login"
+
     @FindBy(xpath = "//input[@name=\"login\"]")
     private lateinit var  loginInput: WebElement
 
