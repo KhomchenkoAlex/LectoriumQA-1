@@ -1,14 +1,11 @@
-import org.openqa.selenium.WebDriver
+package page
+
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
-import org.openqa.selenium.support.PageFactory
 
-open class GithubPage(
-    private val driver: WebDriver
-) {
-    init {
-        PageFactory.initElements(driver, this)
-    }
+class GithubPage : PageObject() {
+
+    val url = "https://github.com/"
 
     @FindBy(xpath = "//label/input[@type=\"text\"]")
     private lateinit var searchInput: WebElement
@@ -16,13 +13,20 @@ open class GithubPage(
     @FindBy(partialLinkText = "All GitHub")
     private lateinit var allGithubButton: WebElement
 
+    @FindBy(xpath = "//ul/li/a[.= \"Blog\"]")
+    private lateinit var blog: WebElement
+
     fun inputIntoSearch(searchString: String) {
         searchInput.clear()
         searchInput.sendKeys(searchString)
     }
 
-    fun clickOnAllGithubButton(){
+    fun clickOnAllGithubButton() {
         allGithubButton.click()
+    }
+
+    fun clickOnBlog() {
+        blog.click()
     }
 
 }

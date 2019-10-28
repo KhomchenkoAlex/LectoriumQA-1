@@ -12,11 +12,21 @@
             </class>
         </classes>
     </test>
+
+    <test name="blog">
+        <classes>
+            <class name="BlogTest">
+                <methods>
+                    <include name="blogTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
     <test name="Search">
         <classes>
             <class name="SearchTest">
                 <methods>
-                    <include name="searchTest"/>
+                    <exclude name="searchTest"/>
                 </methods>
             </class>
         </classes>

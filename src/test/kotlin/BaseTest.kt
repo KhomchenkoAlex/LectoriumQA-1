@@ -1,36 +1,30 @@
-import org.openqa.selenium.chrome.ChromeDriver
-import org.openqa.selenium.chrome.ChromeDriverService
-import org.openqa.selenium.chrome.ChromeOptions
-import org.testng.annotations.*
+import org.testng.annotations.AfterSuite
+import org.testng.annotations.AfterTest
+import org.testng.annotations.BeforeSuite
+import org.testng.annotations.BeforeTest
+import page.BlogPage
+import page.GitHubLoginPage
+import page.GithubPage
+import page.SearchResultPage
 import java.util.concurrent.TimeUnit
 
 open class BaseTest {
 
-    private var chromeDriverService = ChromeDriverService.Builder()
-        .usingAnyFreePort()
-        .build()
+    val webDriver = WebDriverInitializer.webDriver
 
-    private var chromeOptions = ChromeOptions()
-        .addArguments("--window-size=1920,1080")
-
-    var webDriver = ChromeDriver(chromeDriverService, chromeOptions)
-
-    fun implicitlyWait(durationInSeconds: Long) {
-        webDriver.manage().timeouts().implicitlyWait(durationInSeconds, TimeUnit.SECONDS)
-    }
-
-    fun pageLoadWait(durationInSeconds: Long) {
-        webDriver.manage().timeouts().pageLoadTimeout(durationInSeconds,TimeUnit.SECONDS)
-    }
+    val gitHubLoginPage = GitHubLoginPage()
+    val searchPage = SearchResultPage()
+    val githubPage = GithubPage()
+    val blogPage = BlogPage()
 
     @BeforeSuite
-    fun setUp(){
+    fun setUp() {
+        webDriver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS)
         webDriver.navigate().to("https://github.com")
-        pageLoadWait(5)
     }
 
     @AfterSuite
-    fun tearDown(){
+    fun tearDown() {
         webDriver.close()
     }
 }
