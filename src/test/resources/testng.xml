@@ -13,6 +13,16 @@
         </classes>
     </test>
 
+    <test name="Search">
+        <classes>
+            <class name="SearchTest">
+                <methods>
+                    <include name="searchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
     <test name="blog">
         <classes>
             <class name="BlogTest">
@@ -22,14 +32,5 @@
             </class>
         </classes>
     </test>
-    <test name="Search">
-        <classes>
-            <class name="SearchTest">
-                <methods>
-                    <exclude name="searchTest"/>
-                </methods>
-            </class>
-        </classes>
 
-    </test>
 </suite>

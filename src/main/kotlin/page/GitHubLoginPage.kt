@@ -1,11 +1,12 @@
 package page
 
+import AppProperty
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 
 class GitHubLoginPage: PageObject() {
 
-    val loginPageUrl = "https://github.com/login"
+    val loginPageUrl = AppProperty.getPropertyByName("login-page-url")
 
     @FindBy(xpath = "//input[@name=\"login\"]")
     private lateinit var  loginInput: WebElement

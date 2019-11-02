@@ -8,7 +8,8 @@ class BlogTest: BaseTest() {
     @Test
     fun blogTest() {
         githubPage.clickOnBlog()
-        Assert.assertTrue(webDriver.currentUrl!!.contentEquals(blogUrl))
+        val currentUrl = webDriver.currentUrl as String
+        Assert.assertTrue(currentUrl.contentEquals(blogUrl))
         Assert.assertEquals(blogPage.gitHubBlog.text, "The GitHub Blog")
     }
 }

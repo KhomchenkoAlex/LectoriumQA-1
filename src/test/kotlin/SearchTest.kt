@@ -1,5 +1,6 @@
 import org.testng.Assert
 import org.testng.annotations.Test
+import java.util.concurrent.TimeUnit
 
 
 class SearchTest : BaseTest() {
@@ -11,6 +12,7 @@ class SearchTest : BaseTest() {
         webDriver.navigate().to(githubPage.url)
         githubPage.inputIntoSearch(textForSearch)
         githubPage.clickOnAllGithubButton()
-        Assert.assertTrue(searchPage.isResultsContainsText(searchPage.results, textForSearch))
+        val searchResult = searchPage.getSearchResults()
+        Assert.assertTrue(searchPage.isResultsContainsText(searchResult, textForSearch))
     }
 }

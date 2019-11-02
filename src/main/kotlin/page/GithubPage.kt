@@ -1,11 +1,13 @@
 package page
 
+import WebDriverInitializer.webDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
+import java.util.concurrent.TimeUnit
 
 class GithubPage : PageObject() {
 
-    val url = "https://github.com/"
+    val url = AppProperty.getPropertyByName("github-page-url")
 
     @FindBy(xpath = "//label/input[@type=\"text\"]")
     private lateinit var searchInput: WebElement
@@ -22,6 +24,7 @@ class GithubPage : PageObject() {
     }
 
     fun clickOnAllGithubButton() {
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS)
         allGithubButton.click()
     }
 

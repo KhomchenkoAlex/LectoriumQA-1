@@ -20,7 +20,7 @@ open class BaseTest {
     @BeforeSuite
     fun setUp() {
         webDriver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS)
-        webDriver.navigate().to("https://github.com")
+        webDriver.navigate().to(githubPage.url)
     }
 
     @AfterSuite
