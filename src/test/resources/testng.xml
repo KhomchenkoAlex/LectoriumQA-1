@@ -17,7 +17,10 @@
         <classes>
             <class name="RepositoryTest">
                 <methods>
-                    <include name="repositoryTest"/>
+                    <include name="checkAllElementsNumber"/>
+                    <include name="checkFilesNumber"/>
+                    <include name="checkDirectoriesNumber"/>
+                    <include name="checkFiles"/>
                 </methods>
             </class>
         </classes>
