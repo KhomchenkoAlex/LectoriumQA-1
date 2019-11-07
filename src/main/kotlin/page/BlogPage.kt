@@ -6,5 +6,7 @@ import org.openqa.selenium.support.FindBy
 class BlogPage: PageObject() {
 
     @FindBy(xpath = "//div/a/h1" )
-    lateinit var gitHubBlog: WebElement
+    private lateinit var gitHubBlog: WebElement
+
+    fun getElementText() = gitHubBlog.text
 }

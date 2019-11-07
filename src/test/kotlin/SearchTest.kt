@@ -9,10 +9,9 @@ class SearchTest : BaseTest() {
 
     @Test
     fun searchTest() {
-        webDriver.navigate().to(githubPage.url)
+        driver.navigate().to(githubPage.url)
         githubPage.inputIntoSearch(textForSearch)
         githubPage.clickOnAllGithubButton()
-        val searchResult = searchPage.getSearchResults()
-        Assert.assertTrue(searchPage.isResultsContainsText(searchResult, textForSearch))
+        Assert.assertTrue(searchPage.isResultsContainsText(textForSearch))
     }
 }

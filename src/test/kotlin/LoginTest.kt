@@ -1,17 +1,18 @@
 import org.testng.Assert
 import org.testng.annotations.Test
+import java.util.concurrent.TimeUnit
 
-class LoginTest : BaseTest() {
+class LoginTest: BaseTest() {
 
     private val login = AppProperty.getPropertyByName("login")
     private val password = AppProperty.getPropertyByName("password")
     private val incorrectLogin = AppProperty.getPropertyByName("incorrect-login")
     private val incorrectPassword =  AppProperty.getPropertyByName("incorrect-password")
 
-
     @Test
     fun correctLogin(){
-        webDriver.navigate().to(gitHubLoginPage.loginPageUrl)
+        driver.navigate().to(gitHubLoginPage.loginPageUrl)
+        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS)
         gitHubLoginPage.inputLogin(login)
         gitHubLoginPage.inputPassword(password)
         gitHubLoginPage.submit()
@@ -20,7 +21,7 @@ class LoginTest : BaseTest() {
 
     @Test
     fun incorrectLogin() {
-        webDriver.navigate().to(gitHubLoginPage.loginPageUrl)
+        driver.navigate().to(gitHubLoginPage.loginPageUrl)
         gitHubLoginPage.inputLogin(incorrectLogin)
         gitHubLoginPage.inputPassword(incorrectPassword)
         gitHubLoginPage.submit()

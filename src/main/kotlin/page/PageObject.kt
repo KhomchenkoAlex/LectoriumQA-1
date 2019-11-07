@@ -8,4 +8,5 @@ open class PageObject {
     init {
         PageFactory.initElements(WebDriverInitializer.webDriver, this)
     }
+
 }

@@ -1,30 +1,25 @@
 import org.testng.annotations.AfterSuite
-import org.testng.annotations.AfterTest
 import org.testng.annotations.BeforeSuite
-import org.testng.annotations.BeforeTest
-import page.BlogPage
-import page.GitHubLoginPage
-import page.GithubPage
-import page.SearchResultPage
+import page.*
 import java.util.concurrent.TimeUnit
 
-open class BaseTest {
-
-    val webDriver = WebDriverInitializer.webDriver
+abstract class BaseTest {
 
     val gitHubLoginPage = GitHubLoginPage()
     val searchPage = SearchResultPage()
     val githubPage = GithubPage()
     val blogPage = BlogPage()
+    val repoPage = RepositoryPage()
+    val driver = WebDriverInitializer.webDriver
 
     @BeforeSuite
     fun setUp() {
-        webDriver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS)
-        webDriver.navigate().to(githubPage.url)
+        driver.navigate().to(githubPage.url)
+        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS)
     }
 
     @AfterSuite
     fun tearDown() {
-        webDriver.close()
+        driver.close()
     }
 }

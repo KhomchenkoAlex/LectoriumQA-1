@@ -3,9 +3,13 @@ package page
 import WebDriverInitializer.webDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
+import org.openqa.selenium.support.PageFactory
+import org.openqa.selenium.support.ui.Wait
 import java.util.concurrent.TimeUnit
 
-class GithubPage : PageObject() {
+class GithubPage: PageObject() {
+
+
 
     val url = AppProperty.getPropertyByName("github-page-url")
 
@@ -17,6 +21,10 @@ class GithubPage : PageObject() {
 
     @FindBy(xpath = "//ul/li/a[.= \"Blog\"]")
     private lateinit var blog: WebElement
+
+    @FindBy(xpath = "//ul/li[2]/div/a")
+    private lateinit var secondElementOfRepositoryList: WebElement
+
 
     fun inputIntoSearch(searchString: String) {
         searchInput.clear()
@@ -32,4 +40,5 @@ class GithubPage : PageObject() {
         blog.click()
     }
 
+    fun clickOnRepositoryListElement() = secondElementOfRepositoryList.click()
 }

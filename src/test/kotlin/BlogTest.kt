@@ -3,13 +3,13 @@ import org.testng.annotations.Test
 
 class BlogTest: BaseTest() {
 
-    private val blogUrl = "https://github.blog/"
+    private val blogUrl = AppProperty.getPropertyByName("blog-url").toString()
 
     @Test
     fun blogTest() {
         githubPage.clickOnBlog()
-        val currentUrl = webDriver.currentUrl as String
+        val currentUrl = driver.currentUrl as String
         Assert.assertTrue(currentUrl.contentEquals(blogUrl))
-        Assert.assertEquals(blogPage.gitHubBlog.text, "The GitHub Blog")
+        Assert.assertEquals(blogPage.getElementText(), "The GitHub Blog")
     }
 }

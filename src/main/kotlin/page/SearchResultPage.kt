@@ -1,16 +1,15 @@
 package page
 
 import org.openqa.selenium.WebElement
+import org.openqa.selenium.support.FindBy
 
 class SearchResultPage : PageObject() {
 
-    private var resultsLocator = "//p/em"
+    @FindBy(xpath = "//p/em")
+    private lateinit var searchResults: MutableList<WebElement>
 
-    fun getSearchResults(): List<WebElement> =
-        WebDriverInitializer.webDriver.findElementsByXPath(resultsLocator)
-
-    fun isResultsContainsText(results: List<WebElement>, text: String) =
-        results.all {
+    fun isResultsContainsText(text: String) =
+        searchResults.all {
             it.text.contains(
                 other = text,
                 ignoreCase = true
