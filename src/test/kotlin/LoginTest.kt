@@ -1,6 +1,6 @@
+import extension.waitForPageLoad
 import org.testng.Assert
 import org.testng.annotations.Test
-import java.util.concurrent.TimeUnit
 
 class LoginTest: BaseTest() {
 
@@ -12,7 +12,7 @@ class LoginTest: BaseTest() {
     @Test
     fun correctLogin(){
         driver.navigate().to(gitHubLoginPage.loginPageUrl)
-        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS)
+        driver.waitForPageLoad(3)
         gitHubLoginPage.inputLogin(login)
         gitHubLoginPage.inputPassword(password)
         gitHubLoginPage.submit()

@@ -11,7 +11,6 @@ class RepositoryPage(): PageObject() {
     @FindBy(xpath = "//*[local-name() = 'svg'][@aria-label='file']")
     private lateinit var fileElements: MutableList<WebElement>
 
-
     @FindBy(xpath = "//*[local-name() = 'svg'][@aria-label='directory']")
     private lateinit var directoryElements: MutableList<WebElement>
 

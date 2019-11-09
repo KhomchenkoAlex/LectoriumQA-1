@@ -1,7 +1,7 @@
+import extension.waitForPageLoad
 import org.testng.annotations.AfterSuite
 import org.testng.annotations.BeforeSuite
 import page.*
-import java.util.concurrent.TimeUnit
 
 abstract class BaseTest {
 
@@ -15,7 +15,7 @@ abstract class BaseTest {
     @BeforeSuite
     fun setUp() {
         driver.navigate().to(githubPage.url)
-        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS)
+        driver.waitForPageLoad(2)
     }
 
     @AfterSuite

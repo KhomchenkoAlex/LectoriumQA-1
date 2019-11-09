@@ -1,15 +1,12 @@
 package page
 
+import AppProperty
 import WebDriverInitializer.webDriver
+import extension.implicitlyWait
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
-import org.openqa.selenium.support.PageFactory
-import org.openqa.selenium.support.ui.Wait
-import java.util.concurrent.TimeUnit
 
 class GithubPage: PageObject() {
-
-
 
     val url = AppProperty.getPropertyByName("github-page-url")
 
@@ -32,7 +29,7 @@ class GithubPage: PageObject() {
     }
 
     fun clickOnAllGithubButton() {
-        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS)
+        webDriver.implicitlyWait(2)
         allGithubButton.click()
     }
 

@@ -1,13 +1,13 @@
+import extension.waitForPageLoad
 import org.testng.Assert
 import org.testng.annotations.Test
-import java.util.concurrent.TimeUnit
 
 class RepositoryTest: BaseTest() {
 
     @Test
     fun checkAllElementsNumber() {
         githubPage.clickOnRepositoryListElement()
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS)
+        driver.waitForPageLoad(2)
         Assert.assertEquals(repoPage.getAllRepositoryElementsNumber(), 7)
     }
 
@@ -20,5 +20,5 @@ class RepositoryTest: BaseTest() {
     fun checkDirectoriesNumber(){
         Assert.assertTrue(repoPage.getDirectoryElementsNumber()==2)
     }
-    
+
 }
