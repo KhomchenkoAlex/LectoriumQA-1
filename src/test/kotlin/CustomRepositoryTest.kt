@@ -1,9 +1,9 @@
 import org.testng.Assert
 import org.testng.annotations.Test
 
-class RepositoryTest: BaseTest() {
+class CustomRepositoryTest: BaseTest() {
 
-    private val repoPage = pageManager.repositoryPage
+    private val repoPage = pageManager.customRepositoryPage
     private val githubPage = pageManager.githubPage
 
     @Test

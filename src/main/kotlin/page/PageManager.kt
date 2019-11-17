@@ -8,9 +8,10 @@ open class PageManager (
     var blogPage: BlogPage = BlogPage(this)
     var loginPage: LoginPage = LoginPage(this)
     var githubPage: GithubPage = GithubPage(this)
-    var repositoryPage: RepositoryPage = RepositoryPage(this)
+    var customRepositoryPage: CustomRepositoryPage = CustomRepositoryPage(this)
     var searchResultPage: SearchResultPage = SearchResultPage(this)
+    var userRepositoryPage: UserRepositoriesPage = UserRepositoriesPage((this))
 
     fun navigateTo(page: Page) = driver.navigate().to(page.pageUrl)
-   
+
 }
