@@ -9,9 +9,6 @@ class UserRepositoriesPage(pages: PageManager): Page(pages) {
     @FindBy(xpath = "//h3/a")
     lateinit var repositoryList: MutableList<WebElement>
 
-    @FindBy(xpath = "//h3/a")
-    lateinit var filterResult: MutableList<WebElement>
-
     @FindBy(xpath = "//input[@type='search']")
     private lateinit var findRepositoryInput: WebElement
 
@@ -23,12 +20,11 @@ class UserRepositoriesPage(pages: PageManager): Page(pages) {
     fun insertTextIntoFindRepositoryInput(text: String){
         findRepositoryInput.clear()
         findRepositoryInput.sendKeys(text)
-        shortWait.until { ExpectedConditions.visibilityOfAllElements(filterResult) }
     }
 
     fun refreshedRepositoryList(): List<WebElement> {
-        wait.until(ExpectedConditions.visibilityOfAllElements(filterResult))
-        return filterResult
+        wait.until(ExpectedConditions.stalenessOf(repositoryList.first()))
+        return repositoryList
     }
 
     fun getResultRepositoryNames(resultList: List<WebElement>): List<String> =
