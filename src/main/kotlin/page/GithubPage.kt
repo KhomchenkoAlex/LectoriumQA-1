@@ -1,14 +1,13 @@
 package page
 
-import AppProperty
-import WebDriverInitializer.webDriver
-import extension.implicitlyWait
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
+import org.openqa.selenium.support.ui.ExpectedConditions
+import util.AppProperty
 
-class GithubPage: PageObject() {
+class GithubPage(pages: PageManager) : Page(pages) {
 
-    val url = AppProperty.getPropertyByName("github-page-url")
+    override var pageUrl = AppProperty.getPropertyByName("github-page-url")
 
     @FindBy(xpath = "//label/input[@type=\"text\"]")
     private lateinit var searchInput: WebElement
@@ -24,12 +23,13 @@ class GithubPage: PageObject() {
 
 
     fun inputIntoSearch(searchString: String) {
+        shortWait.until(ExpectedConditions.visibilityOf(searchInput))
         searchInput.clear()
         searchInput.sendKeys(searchString)
     }
 
     fun clickOnAllGithubButton() {
-        webDriver.implicitlyWait(2)
+        shortWait.until(ExpectedConditions.visibilityOf(allGithubButton))
         allGithubButton.click()
     }
 
@@ -37,5 +37,8 @@ class GithubPage: PageObject() {
         blog.click()
     }
 
-    fun clickOnRepositoryListElement() = secondElementOfRepositoryList.click()
+    fun clickOnRepositoryListElement() {
+        wait.until(ExpectedConditions.visibilityOf(secondElementOfRepositoryList))
+        secondElementOfRepositoryList.click()
+    }
 }

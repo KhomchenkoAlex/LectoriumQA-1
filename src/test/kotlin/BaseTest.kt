@@ -1,20 +1,18 @@
 import extension.waitForPageLoad
+import manager.AppManager
 import org.testng.annotations.AfterSuite
 import org.testng.annotations.BeforeSuite
-import page.*
 
-abstract class BaseTest {
+open class BaseTest {
 
-    val gitHubLoginPage = GitHubLoginPage()
-    val searchPage = SearchResultPage()
-    val githubPage = GithubPage()
-    val blogPage = BlogPage()
-    val repoPage = RepositoryPage()
-    val driver = WebDriverInitializer.webDriver
+    val driver = AppManager.webDriver
+    val pageManager = AppManager.pageManager
+    val userHelper = AppManager.userHelper
+    private val startPage = pageManager.githubPage
 
     @BeforeSuite
     fun setUp() {
-        driver.navigate().to(githubPage.url)
+        pageManager.navigateTo(startPage)
         driver.waitForPageLoad(2)
     }
 

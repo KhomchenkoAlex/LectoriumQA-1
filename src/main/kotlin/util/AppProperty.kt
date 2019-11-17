@@ -1,3 +1,5 @@
+package util
+
 import java.util.*
 
 object AppProperty {
@@ -14,7 +16,6 @@ object AppProperty {
                 }
         }
     }
-
 
     fun getPropertyByName(propertyName: String): String? =
         properties.getProperty(propertyName)
