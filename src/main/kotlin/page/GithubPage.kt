@@ -21,6 +21,15 @@ class GithubPage(pages: PageManager) : Page(pages) {
     @FindBy(xpath = "//ul/li[2]/div/a")
     private lateinit var secondElementOfRepositoryList: WebElement
 
+    @FindBy(xpath = "//summary/img")
+    private lateinit var loginAvatarImage: WebElement
+
+    @FindBy(xpath = "//form/button[contains(text(),'Sign out')]")
+    private lateinit var signOut: WebElement
+
+    @FindBy(xpath = "//a[@href=\"/login\"]")
+    private lateinit var signIn: WebElement
+
 
     fun inputIntoSearch(searchString: String) {
         shortWait.until(ExpectedConditions.visibilityOf(searchInput))
@@ -41,4 +50,12 @@ class GithubPage(pages: PageManager) : Page(pages) {
         wait.until(ExpectedConditions.visibilityOf(secondElementOfRepositoryList))
         secondElementOfRepositoryList.click()
     }
+
+    fun logout() {
+        loginAvatarImage.click()
+        shortWait.until(ExpectedConditions.visibilityOf(signOut))
+        signOut.click()
+    }
+
+    fun isSignInVisible() = signIn.isDisplayed
 }
