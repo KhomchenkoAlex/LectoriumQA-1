@@ -7,20 +7,20 @@ class RepositoriesTest: BaseTest() {
 
     @Test
     fun repositoryTest() {
-        pageManager.navigateTo(githubPage)
-        githubPage.clickToYourRepositories()
-        Assert.assertTrue(driver.currentUrl.contains("repositories", ignoreCase = true))
+        navigationHelper.navigateTo(githubPage)
+        navigationHelper.goToYourRepositories()
+        Assert.assertTrue(getCurrentUrl().contains("repositories", ignoreCase = true))
         Assert.assertTrue(repoPage.repositoryList.isNotEmpty())
     }
 
     @Test
     fun repositoryFindTest() {
-        val randomRepoName = repoPage.getRandomRepositoryName(repoPage.repositoryList).slice(0..1)
-        repoPage.insertTextIntoFindRepositoryInput(randomRepoName)
-        val resultList = repoPage.refreshedRepositoryList()
-        val result = repoPage.getResultRepositoryNames(resultList)
-        Assert.assertTrue(result.isNotEmpty())
-        Assert.assertTrue(result.all { it.contains(randomRepoName, ignoreCase = true) })
+        val searchText = repositoryHelper.getTextForSearch()
+        repositoryHelper.insertTextToSearchField(searchText)
+        val resultList = repositoryHelper.getSearchResults()
+        val names = repositoryHelper.getRepositoriesNameList(resultList)
+        Assert.assertTrue(resultList.isNotEmpty())
+        Assert.assertTrue(names.all { it.contains(searchText, ignoreCase = true) })
     }
 
 }

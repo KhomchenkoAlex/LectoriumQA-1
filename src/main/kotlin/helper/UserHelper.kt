@@ -15,7 +15,7 @@ class UserHelper(driver: WebDriver): PageManager(driver) {
     fun loginAs(){}
 
     fun signOut(){
-        githubPage.clickToSignOut()
+        githubPage.clickOnSignOut()
     }
 
     fun correctLogin(){

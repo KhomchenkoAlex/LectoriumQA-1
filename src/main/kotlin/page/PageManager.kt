@@ -11,7 +11,4 @@ open class PageManager (
     var customRepositoryPage: CustomRepositoryPage = CustomRepositoryPage(this)
     var searchResultPage: SearchResultPage = SearchResultPage(this)
     var userRepositoryPage: UserRepositoriesPage = UserRepositoriesPage((this))
-
-    fun navigateTo(page: Page) = driver.navigate().to(page.pageUrl)
-
 }

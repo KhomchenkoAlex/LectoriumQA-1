@@ -12,7 +12,7 @@ class UserRepositoriesPage(pages: PageManager): Page(pages) {
     @FindBy(xpath = "//input[@type='search']")
     private lateinit var findRepositoryInput: WebElement
 
-    fun getRandomRepositoryName(repositoryList: MutableList<WebElement>): String {
+    fun getRandomRepositoryName(): String {
         val randomPosition = (0 until repositoryList.size).random()
         return repositoryList[randomPosition].text
     }

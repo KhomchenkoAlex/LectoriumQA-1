@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.ui.ExpectedConditions
 import util.AppProperty
-import java.time.Duration
 
 class GithubPage(pages: PageManager) : Page(pages) {
 
@@ -22,8 +21,8 @@ class GithubPage(pages: PageManager) : Page(pages) {
     @FindBy(xpath = "//ul/li[2]/div/a")
     private lateinit var secondElementOfRepositoryList: WebElement
 
-    @FindBy(xpath = "//summary/img")
-    private lateinit var loginAvatarImage: WebElement
+    @FindBy(xpath = "//summary/img[@class='avatar']")
+    private lateinit var avatarIcon: WebElement
 
     @FindBy(xpath = "//a[contains(.,'Your repositories')]")
     private lateinit var yourRepositories: WebElement
@@ -56,17 +55,20 @@ class GithubPage(pages: PageManager) : Page(pages) {
         secondElementOfRepositoryList.click()
     }
 
-    fun clickToSignOut() {
-        loginAvatarImage.click()
-        shortWait.until(ExpectedConditions.visibilityOf(signOut))
+    fun clickOnAvatarIcon() {
+        shortWait.until(ExpectedConditions.visibilityOf(avatarIcon))
+        avatarIcon.click()
+        waitTimeout(2)
+    }
+
+    fun clickOnSignOut() {
+        wait.until(ExpectedConditions.visibilityOf(signOut))
         signOut.click()
     }
 
-    fun clickToYourRepositories(){
-        loginAvatarImage.click()
+    fun clickOnYourRepositories(){
         shortWait.until(ExpectedConditions.visibilityOf(yourRepositories))
         yourRepositories.click()
-        shortWait.withTimeout(Duration.ofSeconds(1))
     }
 
     fun isSignInVisible() = signIn.isDisplayed

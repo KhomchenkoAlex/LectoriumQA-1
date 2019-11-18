@@ -1,23 +1,24 @@
-import extension.waitForPageLoad
 import manager.AppManager
 import org.testng.annotations.AfterSuite
 import org.testng.annotations.BeforeSuite
 
 open class BaseTest {
 
-    val driver = AppManager.webDriver
-    val pageManager = AppManager.pageManager
+    val navigationHelper = AppManager.navigationHelper
     val userHelper = AppManager.userHelper
-    private val startPage = pageManager.githubPage
+    val repositoryHelper = AppManager.repositoryHelper
+    val pageManager = AppManager.pageManager
+    private val startPage = AppManager.pageManager.githubPage
+
+    fun getCurrentUrl(): String = AppManager.webDriver.currentUrl
 
     @BeforeSuite
     fun setUp() {
-        pageManager.navigateTo(startPage)
-        driver.waitForPageLoad(2)
+        navigationHelper.navigateTo(startPage)
     }
 
     @AfterSuite
     fun tearDown() {
-        driver.close()
+        AppManager.webDriver.close()
     }
 }

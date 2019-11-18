@@ -8,7 +8,7 @@ class BlogTest : BaseTest() {
     @Test
     fun blogTest() {
         userHelper.goToBlog()
-        val currentUrl = driver.currentUrl as String
+        val currentUrl = getCurrentUrl()
         Assert.assertTrue(currentUrl.contentEquals(blogPage.pageUrl!!))
         Assert.assertEquals(blogPage.getElementText(), "The GitHub Blog")
     }

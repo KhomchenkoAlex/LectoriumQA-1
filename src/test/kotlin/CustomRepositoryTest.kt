@@ -8,7 +8,7 @@ class CustomRepositoryTest: BaseTest() {
 
     @Test
     fun checkAllElementsNumber() {
-        pageManager.navigateTo(githubPage)
+        navigationHelper.navigateTo(githubPage)
         userHelper.goToRepository()
         Assert.assertEquals(repoPage.getAllRepositoryElementsNumber(), 7)
     }
