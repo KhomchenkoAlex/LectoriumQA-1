@@ -10,7 +10,7 @@ class SearchTest : BaseTest() {
     @Test
     fun searchTest() {
         pageManager.navigateTo(githubPage)
-        userHelper.inputTextForSearch(textForSearch)
+        userHelper.searchFor(textForSearch)
         Assert.assertTrue(searchPage.isResultsContainsText(textForSearch))
     }
 }
