@@ -18,4 +18,13 @@ class RepositoryHelper(driver: WebDriver): PageManager(driver) {
     fun getFilesCount() = customRepositoryPage.getFileElementsCount()
     fun getDirectoriesCount() = customRepositoryPage.getDirectoryElementsCount()
     fun getAllElementsCount() = customRepositoryPage.getAllRepositoryElementsCount()
+
+    fun getAllRepositoryNamesList() = userRepositoryPage.getAllRepositoriesName()
+
+    fun createNewRepository(name: String) {
+        githubPage.clickOnNewRepositoryButton()
+        newRepositoryPage.inputNewRepositoryName(name)
+        newRepositoryPage.clickOnCreateRepositoryButton()
+    }
+
 }

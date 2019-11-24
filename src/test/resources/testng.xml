@@ -52,6 +52,7 @@
                 <methods>
                     <include name="repositoryTest" />
                     <include name="repositoryFindTest" />
+                    <include name="createNewRepositoryTest" />
                 </methods>
             </class>
         </classes>

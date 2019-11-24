@@ -23,4 +23,13 @@ class RepositoriesTest: BaseTest() {
         Assert.assertTrue(names.all { it.contains(searchText, ignoreCase = true) })
     }
 
+    @Test
+    fun createNewRepositoryTest(){
+        navigationHelper.navigateTo(githubPage)
+        repositoryHelper.createNewRepository("Test")
+        navigationHelper.goToYourRepositories()
+        val repoNames = repositoryHelper.getAllRepositoryNamesList()
+        Assert.assertTrue(repoNames.contains("Test"))
+    }
+
 }

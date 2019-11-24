@@ -29,4 +29,6 @@ class UserRepositoriesPage(pages: PageManager): Page(pages) {
 
     fun getResultRepositoryNames(resultList: List<WebElement>): List<String> =
         resultList.map { it.text }
+
+    fun getAllRepositoriesName() = repositoryList.map { it.text }
 }

@@ -33,6 +33,9 @@ class GithubPage(pages: PageManager) : Page(pages) {
     @FindBy(xpath = "//a[@href='/login']")
     private lateinit var signIn: WebElement
 
+    @FindBy(xpath = "//h2/a[@href='/new']")
+    private lateinit var newRepositoryButton: WebElement
+
 
     fun inputIntoSearch(searchString: String) {
         shortWait.until(ExpectedConditions.visibilityOf(searchInput))
@@ -69,6 +72,11 @@ class GithubPage(pages: PageManager) : Page(pages) {
     fun clickOnYourRepositories(){
         shortWait.until(ExpectedConditions.visibilityOf(yourRepositories))
         yourRepositories.click()
+    }
+
+    fun clickOnNewRepositoryButton(){
+        shortWait.until(ExpectedConditions.visibilityOf(newRepositoryButton))
+        newRepositoryButton.click()
     }
 
     fun isSignInVisible() = signIn.isDisplayed
