@@ -15,6 +15,7 @@ class UserHelper(driver: WebDriver): PageManager(driver) {
     fun loginAs(){}
 
     fun signOut(){
+        githubPage.clickOnAvatarIcon()
         githubPage.clickOnSignOut()
     }
 
@@ -30,7 +31,7 @@ class UserHelper(driver: WebDriver): PageManager(driver) {
         loginPage.submit()
     }
 
-    fun goToBlog(){
+    fun clickOnBlogLink(){
         githubPage.clickOnBlog()
     }
 
@@ -39,7 +40,7 @@ class UserHelper(driver: WebDriver): PageManager(driver) {
         githubPage.clickOnAllGithubButton()
     }
 
-    fun goToRepository(){
+    fun clickOnRepositoryLink(){
         githubPage.clickOnRepositoryListElement()
     }
 }

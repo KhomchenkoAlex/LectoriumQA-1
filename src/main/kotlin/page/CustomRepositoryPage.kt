@@ -14,10 +14,10 @@ class CustomRepositoryPage(pages: PageManager): Page(pages) {
     @FindBy(xpath = "//*[local-name() = 'svg'][@aria-label='directory']")
     private lateinit var directoryElements: MutableList<WebElement>
 
-    fun getAllRepositoryElementsNumber() = listElements.size
+    fun getAllRepositoryElementsCount() = listElements.size
 
-    fun getFileElementsNumber() = fileElements.size
+    fun getFileElementsCount() = fileElements.size
 
-    fun getDirectoryElementsNumber() = directoryElements.size
+    fun getDirectoryElementsCount() = directoryElements.size
 
 }

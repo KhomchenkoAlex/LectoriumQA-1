@@ -9,15 +9,15 @@ class CustomRepositoryTest: BaseTest() {
     @Test
     fun checkAllElementsNumber() {
         navigationHelper.navigateTo(githubPage)
-        userHelper.goToRepository()
-        Assert.assertEquals(repoPage.getAllRepositoryElementsNumber(), 7)
+        userHelper.clickOnRepositoryLink()
+        Assert.assertEquals(repositoryHelper.getAllElementsCount(), 7)
     }
 
     @Test
     fun checkFilesAndDirectoriesCount(){
-        val filesCount = repoPage.getFileElementsNumber()
-        val directoriesCount = repoPage.getDirectoryElementsNumber()
-        val allElements = repoPage.getAllRepositoryElementsNumber()
+        val filesCount = repositoryHelper.getFilesCount()
+        val directoriesCount = repositoryHelper.getDirectoriesCount()
+        val allElements = repositoryHelper.getAllElementsCount()
         Assert.assertEquals(directoriesCount, 2)
         Assert.assertEquals(filesCount, 5)
         Assert.assertEquals(allElements, (directoriesCount + filesCount))

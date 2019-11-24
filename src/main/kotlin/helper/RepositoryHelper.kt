@@ -14,4 +14,8 @@ class RepositoryHelper(driver: WebDriver): PageManager(driver) {
 
     fun getRepositoriesNameList(resultList: List<WebElement>): List<String> =
         userRepositoryPage.getResultRepositoryNames(resultList)
+
+    fun getFilesCount() = customRepositoryPage.getFileElementsCount()
+    fun getDirectoriesCount() = customRepositoryPage.getDirectoryElementsCount()
+    fun getAllElementsCount() = customRepositoryPage.getAllRepositoryElementsCount()
 }
