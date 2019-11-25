@@ -13,9 +13,19 @@
         </classes>
     </test>
 
+<!--    <test name="blog">-->
+<!--        <classes>-->
+<!--            <class name="BlogTest">-->
+<!--                <methods>-->
+<!--                    <include name="blogTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
     <test name="repository">
         <classes>
-            <class name="RepositoryTest">
+            <class name="CustomRepositoryTest">
                 <methods>
                     <include name="checkAllElementsNumber"/>
                     <include name="checkFilesNumber"/>
@@ -36,16 +46,25 @@
 <!--        </classes>-->
 <!--    </test>-->
 
+    <test name="repositories">
+        <classes>
+            <class name="RepositoriesTest">
+                <methods>
+                    <include name="repositoryTest" />
+                    <include name="repositoryFindTest" />
+                    <include name="createNewRepositoryTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-
-<!--    <test name="blog">-->
-<!--        <classes>-->
-<!--            <class name="BlogTest">-->
-<!--                <methods>-->
-<!--                    <include name="blogTest"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-
+    <test name="Logout">
+        <classes>
+            <class name="LogoutTest">
+                <methods>
+                    <include name="logoutTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>

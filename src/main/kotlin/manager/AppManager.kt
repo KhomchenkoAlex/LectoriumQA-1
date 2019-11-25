@@ -1,8 +1,14 @@
+package manager
+
+import helper.NavigationHelper
+import helper.RepositoryHelper
+import helper.UserHelper
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeDriverService
 import org.openqa.selenium.chrome.ChromeOptions
+import page.PageManager
 
-object WebDriverInitializer {
+object AppManager {
     private val chromeDriverService = ChromeDriverService.Builder()
         .usingAnyFreePort()
         .build()
@@ -11,4 +17,8 @@ object WebDriverInitializer {
         .addArguments("--window-size=1920,1080")
 
     val webDriver = ChromeDriver(chromeDriverService, chromeOptions)
+    val pageManager = PageManager(webDriver)
+    val userHelper = UserHelper(webDriver)
+    val navigationHelper = NavigationHelper(webDriver)
+    val repositoryHelper = RepositoryHelper(webDriver)
 }

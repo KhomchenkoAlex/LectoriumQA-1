@@ -1,12 +1,13 @@
 package page
 
-import AppProperty
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
+import org.openqa.selenium.support.ui.ExpectedConditions
+import util.AppProperty
 
-class GitHubLoginPage: PageObject() {
+class LoginPage(pages: PageManager) : Page(pages) {
 
-    val loginPageUrl = AppProperty.getPropertyByName("login-page-url")
+    override var pageUrl = AppProperty.getPropertyByName("login-page-url")
 
     @FindBy(xpath = "//input[@name=\"login\"]")
     private lateinit var  loginInput: WebElement
@@ -24,11 +25,13 @@ class GitHubLoginPage: PageObject() {
     lateinit var errorMessage: WebElement
 
     fun inputLogin(login: String?) {
+        shortWait.until(ExpectedConditions.visibilityOf(loginInput))
         loginInput.clear()
         loginInput.sendKeys(login)
     }
 
     fun inputPassword(password: String?) {
+        shortWait.until(ExpectedConditions.visibilityOf(passwordInput))
         passwordInput.clear()
         passwordInput.sendKeys(password)
     }
