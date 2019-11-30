@@ -24,6 +24,12 @@ class LoginPage(pages: PageManager) : Page(pages) {
     @FindBy(xpath = "//form/div/div[contains(., 'Incorrect')]")
     lateinit var errorMessage: WebElement
 
+    @FindBy(xpath = "//form/label/input[@type=\"text\"]")
+    lateinit var searchField: WebElement
+
+    @FindBy(partialLinkText = "All GitHub")
+    private lateinit var allGithubButton: WebElement
+
     fun inputLogin(login: String?) {
         shortWait.until(ExpectedConditions.visibilityOf(loginInput))
         loginInput.clear()
@@ -38,5 +44,16 @@ class LoginPage(pages: PageManager) : Page(pages) {
 
     fun submit() {
         submitButton.click()
+    }
+
+    fun inputToSearchField(text: String) {
+        shortWait.until(ExpectedConditions.visibilityOf(searchField))
+        searchField.clear()
+        searchField.sendKeys(text)
+    }
+
+    fun clickOnAllGitHubButton() {
+        shortWait.until(ExpectedConditions.elementToBeClickable(allGithubButton))
+        allGithubButton.click()
     }
 }

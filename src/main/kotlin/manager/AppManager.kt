@@ -2,6 +2,7 @@ package manager
 
 import helper.NavigationHelper
 import helper.RepositoryHelper
+import helper.SearchHelper
 import helper.UserHelper
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeDriverService
@@ -21,4 +22,5 @@ object AppManager {
     val userHelper = UserHelper(webDriver)
     val navigationHelper = NavigationHelper(webDriver)
     val repositoryHelper = RepositoryHelper(webDriver)
+    val searchHelper = SearchHelper(webDriver)
 }

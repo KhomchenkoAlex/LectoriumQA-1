@@ -8,6 +8,7 @@ open class BaseTest {
     val userHelper = AppManager.userHelper
     val repositoryHelper = AppManager.repositoryHelper
     val pageManager = AppManager.pageManager
+    val searchHelper = AppManager.searchHelper
     private val startPage = AppManager.pageManager.githubPage
 
     fun getCurrentUrl(): String = AppManager.webDriver.currentUrl
