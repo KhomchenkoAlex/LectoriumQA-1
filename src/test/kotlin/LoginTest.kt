@@ -1,21 +1,20 @@
 import org.testng.Assert
 import org.testng.annotations.Test
+import page.PageManager.Pages.LOGIN_PAGE
 
 class LoginTest: BaseTest() {
 
-    private val loginPage = pageManager.loginPage
-
     @Test
     fun correctLogin(){
-        navigationHelper.navigateTo(loginPage)
+        navigationHelper.navigateTo(LOGIN_PAGE)
         userHelper.correctLogin()
-        Assert.assertTrue(loginPage.successMessage.isEnabled)
+        Assert.assertTrue(webElementHelper.getLoginSuccessMessage().isEnabled)
     }
 
     @Test
     fun incorrectLogin() {
-        navigationHelper.navigateTo(loginPage)
+        navigationHelper.navigateTo(LOGIN_PAGE)
         userHelper.incorrectLogin()
-        Assert.assertTrue(loginPage.errorMessage.isEnabled)
+        Assert.assertTrue(webElementHelper.getLoginErrorMessage().isEnabled)
     }
 }

@@ -21,4 +21,6 @@ class SearchHelper(driver: WebDriver): PageManager(driver){
         searchResultPage.waitForRefresh()
         return searchResultPage.getRepositoryNames()
     }
+
+    fun isResultsContainsText(text: String) = searchResultPage.isResultsContainsText(text)
 }

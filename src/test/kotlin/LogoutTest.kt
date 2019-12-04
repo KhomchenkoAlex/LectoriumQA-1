@@ -1,13 +1,13 @@
 import org.testng.Assert
 import org.testng.annotations.Test
+import page.PageManager.Pages.GITHUB_PAGE
 
 class LogoutTest: BaseTest() {
-    private val page = pageManager.githubPage
 
     @Test
     fun logoutTest(){
-        navigationHelper.navigateTo(page)
+        navigationHelper.navigateTo(GITHUB_PAGE)
         userHelper.signOut()
-        Assert.assertTrue(page.isSignInVisible())
+        Assert.assertTrue(webElementHelper.isSignInIsVisible())
     }
 }

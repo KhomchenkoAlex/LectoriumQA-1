@@ -1,16 +1,15 @@
 import org.testng.Assert
 import org.testng.annotations.Test
+import page.PageManager.Pages.GITHUB_PAGE
 
 class RepositoriesTest: BaseTest() {
-    private val repoPage = pageManager.userRepositoryPage
-    private val githubPage = pageManager.githubPage
 
     @Test
     fun repositoryTest() {
-        navigationHelper.navigateTo(githubPage)
+        navigationHelper.navigateTo(GITHUB_PAGE)
         navigationHelper.goToYourRepositories()
         Assert.assertTrue(getCurrentUrl().contains("repositories", ignoreCase = true))
-        Assert.assertTrue(repoPage.repositoryList.isNotEmpty())
+        Assert.assertTrue(repositoryHelper.getUserRepositoriesList().isNotEmpty())
     }
 
     @Test
@@ -25,7 +24,7 @@ class RepositoriesTest: BaseTest() {
 
     @Test
     fun createNewRepositoryTest(){
-        navigationHelper.navigateTo(githubPage)
+        navigationHelper.navigateTo(GITHUB_PAGE)
         repositoryHelper.createNewRepository("Test")
         navigationHelper.goToYourRepositories()
         val repoNames = repositoryHelper.getAllRepositoryNamesList()

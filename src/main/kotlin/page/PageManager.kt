@@ -12,4 +12,9 @@ open class PageManager (
     var searchResultPage: SearchResultPage = SearchResultPage(this)
     var userRepositoryPage: UserRepositoriesPage = UserRepositoriesPage((this))
     var newRepositoryPage: NewRepositoryPage = NewRepositoryPage(this)
+
+    enum class Pages {
+        BLOG_PAGE, CUSTOM_REPOSITORY_PAGE, GITHUB_PAGE, LOGIN_PAGE,
+        NEW_REPOSITORY_PAGE, SEARCH_RESULT_PAGE, USER_REPOSITORIES_PAGE
+    }
 }

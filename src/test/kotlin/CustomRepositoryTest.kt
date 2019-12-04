@@ -1,14 +1,13 @@
 import org.testng.Assert
 import org.testng.annotations.Test
+import page.PageManager.Pages.GITHUB_PAGE
 
 class CustomRepositoryTest: BaseTest() {
 
-    private val repoPage = pageManager.customRepositoryPage
-    private val githubPage = pageManager.githubPage
 
     @Test
     fun checkAllElementsNumber() {
-        navigationHelper.navigateTo(githubPage)
+        navigationHelper.navigateTo(GITHUB_PAGE)
         userHelper.clickOnRepositoryLink()
         Assert.assertEquals(repositoryHelper.getAllElementsCount(), 7)
     }

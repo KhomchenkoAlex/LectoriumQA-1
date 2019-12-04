@@ -1,16 +1,15 @@
 import org.testng.Assert
 import org.testng.annotations.Test
+import page.PageManager.Pages.GITHUB_PAGE
 
 class SearchTest : BaseTest() {
 
     private val textForSearch = "Java"
-    private val githubPage = pageManager.githubPage
-    private val searchPage = pageManager.searchResultPage
 
     @Test
     fun searchTest() {
-        navigationHelper.navigateTo(githubPage)
+        navigationHelper.navigateTo(GITHUB_PAGE)
         userHelper.searchFor(textForSearch)
-        Assert.assertTrue(searchPage.isResultsContainsText(textForSearch))
+        Assert.assertTrue(searchHelper.isResultsContainsText(textForSearch))
     }
 }

@@ -27,4 +27,6 @@ class RepositoryHelper(driver: WebDriver): PageManager(driver) {
         newRepositoryPage.clickOnCreateRepositoryButton()
     }
 
+    fun getUserRepositoriesList() = userRepositoryPage.repositoryList
+
 }
