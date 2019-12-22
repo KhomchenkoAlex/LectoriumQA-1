@@ -18,6 +18,12 @@ class SearchResultPage(pages: PageManager) : Page(pages) {
     @FindBy(xpath = "(//span[@class = 'select-menu-item-text'])[3]")
     private lateinit var fewestStars: WebElement
 
+    @FindBy(xpath = "//div/div[@class = 'mr-3']/a")
+    private lateinit var stars: MutableList<WebElement>
+
+    @FindBy(xpath = "(//div/div[@class = 'mr-3']/a)[0]")
+    private lateinit var firstStar: WebElement
+
     fun isResultsContainsText(text: String): Boolean =
         searchResults.run {
             shortWait.until(ExpectedConditions.visibilityOfAllElements(this))
@@ -46,4 +52,6 @@ class SearchResultPage(pages: PageManager) : Page(pages) {
     fun waitForRefresh(){
         shortWait.until(ExpectedConditions.stalenessOf (repositorySearchResult.first()))
     }
+
+    fun getStarsValues(): MutableList<WebElement>  = stars
 }
