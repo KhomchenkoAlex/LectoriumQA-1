@@ -73,6 +73,7 @@
                 <methods>
 <!--                    <include name="sortingResultNotEquals" />-->
                     <include name="countStarsValues" />
+                    <include name="foundByText" />
                 </methods>
             </class>
         </classes>

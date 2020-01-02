@@ -1,5 +1,7 @@
 package helper
 
+import manager.AppManager
+import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import page.PageManager
 
@@ -38,5 +40,11 @@ class SearchHelper(driver: WebDriver): PageManager(driver){
             }
         }
         return starsValuesList
+    }
+
+    fun getElementValue(text: String): Int {
+        AppManager.implicitlyWait(2)
+        val element = driver.findElement(By.xpath("//a[contains(.,'$text')]/span"))
+        return element.text.replaceFirst(",","").toInt()
     }
 }

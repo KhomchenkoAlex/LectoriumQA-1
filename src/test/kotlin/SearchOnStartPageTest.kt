@@ -8,7 +8,15 @@ class SearchOnStartPageTest: BaseTest() {
         searchHelper.searchOnLoginPage("java")
         val result = searchHelper.getStarsValues()
         result.forEach { println(it) }
-        Assert.assertTrue(result.sum() == 96160)
+        println(result.sum())
+        Assert.assertTrue(result.sum() > 0)
+    }
+
+    @Test
+    fun foundByText() {
+        val result = searchHelper.getElementValue("Java")
+        println(result)
+        Assert.assertTrue(result > 0)
     }
 
     @Test

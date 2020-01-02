@@ -1,10 +1,12 @@
 package manager
 
 import helper.*
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeDriverService
 import org.openqa.selenium.chrome.ChromeOptions
 import page.PageManager
+import java.util.concurrent.TimeUnit
 
 object AppManager {
     private val chromeDriverService = ChromeDriverService.Builder()
@@ -21,4 +23,7 @@ object AppManager {
     val repositoryHelper = RepositoryHelper(webDriver)
     val searchHelper = SearchHelper(webDriver)
     val webElementHelper = WebElementHelper(webDriver)
+
+    fun implicitlyWait(duration: Long): WebDriver.Timeouts =
+        webDriver.manage().timeouts().implicitlyWait(duration, TimeUnit.SECONDS)
 }
