@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.ui.ExpectedConditions
 import util.AppProperty
 
-class LoginPage(pages: PageManager) : Page(pages) {
+class LoginPage: Page() {
 
     override var pageUrl = AppProperty.getPropertyByName("login-page-url")
 

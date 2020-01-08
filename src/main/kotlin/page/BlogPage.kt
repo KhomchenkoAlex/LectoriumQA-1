@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.ui.ExpectedConditions
 import util.AppProperty
 
-class BlogPage(pages: PageManager) : Page(pages) {
+class BlogPage: Page() {
 
     override var pageUrl = AppProperty.getPropertyByName("blog-url")
 

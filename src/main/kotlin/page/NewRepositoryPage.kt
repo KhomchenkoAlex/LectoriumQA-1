@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.ui.ExpectedConditions
 
-class NewRepositoryPage(pages: PageManager) : Page(pages) {
+class NewRepositoryPage: Page() {
 
     @FindBy(xpath = "//dd/input[@id='repository_name']")
     private lateinit var newRepositoryNameInput: WebElement

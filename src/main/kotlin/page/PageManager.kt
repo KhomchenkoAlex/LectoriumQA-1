@@ -5,13 +5,13 @@ import org.openqa.selenium.WebDriver
 open class PageManager (
     val driver: WebDriver
 ) {
-    var blogPage: BlogPage = BlogPage(this)
-    var loginPage: LoginPage = LoginPage(this)
-    var githubPage: GithubPage = GithubPage(this)
-    var customRepositoryPage: CustomRepositoryPage = CustomRepositoryPage(this)
-    var searchResultPage: SearchResultPage = SearchResultPage(this)
-    var userRepositoryPage: UserRepositoriesPage = UserRepositoriesPage((this))
-    var newRepositoryPage: NewRepositoryPage = NewRepositoryPage(this)
+    var blogPage: BlogPage = BlogPage()
+    var loginPage: LoginPage = LoginPage()
+    var githubPage: GithubPage = GithubPage()
+    var customRepositoryPage: CustomRepositoryPage = CustomRepositoryPage()
+    var searchResultPage: SearchResultPage = SearchResultPage()
+    var userRepositoryPage: UserRepositoriesPage = UserRepositoriesPage()
+    var newRepositoryPage: NewRepositoryPage = NewRepositoryPage()
 
     enum class Pages {
         BLOG_PAGE, CUSTOM_REPOSITORY_PAGE, GITHUB_PAGE, LOGIN_PAGE,

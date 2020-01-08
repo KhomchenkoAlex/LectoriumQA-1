@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.ui.ExpectedConditions
 
-class UserRepositoriesPage(pages: PageManager): Page(pages) {
+class UserRepositoriesPage: Page() {
 
     @FindBy(xpath = "//h3/a")
     lateinit var repositoryList: MutableList<WebElement>

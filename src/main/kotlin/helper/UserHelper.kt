@@ -1,5 +1,6 @@
 package helper
 
+import io.qameta.allure.Step
 import org.openqa.selenium.WebDriver
 import page.PageManager
 import util.AppProperty
@@ -14,11 +15,13 @@ class UserHelper(driver: WebDriver): PageManager(driver) {
 
     fun loginAs(){}
 
+    @Step("Sign out")
     fun signOut(){
         githubPage.clickOnAvatarIcon()
         githubPage.clickOnSignOut()
     }
 
+    @Step("Successful Login")
     fun correctLogin(){
         loginPage.inputLogin(login)
         loginPage.inputPassword(password)

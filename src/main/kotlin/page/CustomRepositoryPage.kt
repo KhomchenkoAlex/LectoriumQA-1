@@ -3,7 +3,7 @@ package page
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 
-class CustomRepositoryPage(pages: PageManager): Page(pages) {
+class CustomRepositoryPage: Page() {
 
     @FindBy(xpath = "//tr/td/img")
     private lateinit var listElements: MutableList<WebElement>

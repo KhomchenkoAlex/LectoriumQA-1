@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.ui.ExpectedConditions
 
-class SearchResultPage(pages: PageManager) : Page(pages) {
+class SearchResultPage: Page() {
 
     @FindBy(xpath = "//p/em")
     private lateinit var searchResults: MutableList<WebElement>

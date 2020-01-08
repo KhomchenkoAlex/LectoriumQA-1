@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.ui.ExpectedConditions
 import util.AppProperty
 
-class GithubPage(pages: PageManager) : Page(pages) {
+class GithubPage: Page() {
 
     override var pageUrl = AppProperty.getPropertyByName("github-page-url")
 

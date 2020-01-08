@@ -5,9 +5,7 @@ import org.openqa.selenium.support.PageFactory
 import org.openqa.selenium.support.ui.WebDriverWait
 import java.time.Duration
 
-abstract class Page(
-    pages: PageManager
-) {
+abstract class Page {
     private val driver = AppManager.webDriver
     var wait: WebDriverWait = WebDriverWait(driver, 10)
     var shortWait: WebDriverWait = WebDriverWait(driver, 3)
