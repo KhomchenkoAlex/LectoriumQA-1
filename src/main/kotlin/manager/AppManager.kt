@@ -1,6 +1,8 @@
 package manager
 
 import helper.*
+import io.qameta.allure.Attachment
+import org.openqa.selenium.OutputType
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeDriverService
@@ -26,4 +28,9 @@ object AppManager {
 
     fun implicitlyWait(duration: Long): WebDriver.Timeouts =
         webDriver.manage().timeouts().implicitlyWait(duration, TimeUnit.SECONDS)
+
+    @Attachment(value = "Page screenshot", type = "image/png")
+    fun takeScreenshot(): ByteArray {
+        return webDriver.getScreenshotAs(OutputType.BYTES)
+    }
 }

@@ -13,50 +13,50 @@
         </classes>
     </test>
 
-<!--    <test name="blog">-->
-<!--        <classes>-->
-<!--            <class name="BlogTest">-->
-<!--                <methods>-->
-<!--                    <include name="blogTest"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="blog">
+        <classes>
+            <class name="BlogTest">
+                <methods>
+                    <include name="blogTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="repository">-->
-<!--        <classes>-->
-<!--            <class name="CustomRepositoryTest">-->
-<!--                <methods>-->
-<!--                    <include name="checkAllElementsNumber"/>-->
-<!--                    <include name="checkFilesNumber"/>-->
-<!--                    <include name="checkDirectoriesNumber"/>-->
-<!--                    <include name="checkFiles"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="repository">
+        <classes>
+            <class name="CustomRepositoryTest">
+                <methods>
+                    <include name="checkAllElementsNumber"/>
+                    <include name="checkFilesNumber"/>
+                    <include name="checkDirectoriesNumber"/>
+                    <include name="checkFiles"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Search">-->
-<!--        <classes>-->
-<!--            <class name="SearchTest">-->
-<!--                <methods>-->
-<!--                    <include name="searchTest"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Search">
+        <classes>
+            <class name="SearchTest">
+                <methods>
+                    <include name="searchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="repositories">-->
-<!--        <classes>-->
-<!--            <class name="RepositoriesTest">-->
-<!--                <methods>-->
-<!--                    <include name="repositoryTest" />-->
-<!--                    <include name="repositoryFindTest" />-->
+    <test name="repositories">
+        <classes>
+            <class name="RepositoriesTest">
+                <methods>
+                    <include name="repositoryTest" />
+                    <include name="repositoryFindTest" />
 <!--                    <include name="createNewRepositoryTest" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
 
     <test name="search">
         <classes>

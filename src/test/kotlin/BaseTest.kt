@@ -1,8 +1,11 @@
+import listener.CustomTestListener
 import manager.AppManager
 import org.testng.annotations.AfterSuite
 import org.testng.annotations.BeforeSuite
+import org.testng.annotations.Listeners
 import page.PageManager.Pages.GITHUB_PAGE
 
+@Listeners(CustomTestListener::class)
 open class BaseTest {
 
     val navigationHelper = AppManager.navigationHelper
