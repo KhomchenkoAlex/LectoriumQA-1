@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver
 open class PageManager (
     val driver: WebDriver
 ) {
+    var aboutPage: AboutPage = AboutPage()
+    var twitterPage: TwitterPage = TwitterPage()
     var blogPage: BlogPage = BlogPage()
     var loginPage: LoginPage = LoginPage()
     var githubPage: GithubPage = GithubPage()

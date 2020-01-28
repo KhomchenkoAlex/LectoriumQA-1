@@ -38,6 +38,18 @@ class UserHelper(driver: WebDriver): PageManager(driver) {
         githubPage.clickOnBlog()
     }
 
+    fun clickOnAboutLink(){
+        githubPage.clickOnAbout()
+    }
+
+    fun clickOnTwitter() {
+        aboutPage.getTwitterButton().click()
+    }
+
+    fun getCurrentUrl(): String {
+        return driver.currentUrl.toLowerCase()
+    }
+
     fun searchFor(text: String) {
         githubPage.inputIntoSearch(text)
         githubPage.clickOnAllGithubButton()
@@ -45,6 +57,14 @@ class UserHelper(driver: WebDriver): PageManager(driver) {
 
     fun clickOnRepositoryLink(){
         githubPage.clickOnRepositoryListElement()
+    }
+
+    fun geGitHubLinkText(): String {
+       return twitterPage.getGitHubLink().text
+    }
+
+    fun isAccountVerifiedElementVisible(): Boolean {
+        return twitterPage.getAccountVerifiedElement().isDisplayed
     }
 
 

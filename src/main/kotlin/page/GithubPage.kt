@@ -18,6 +18,9 @@ class GithubPage: Page() {
     @FindBy(xpath = "//ul/li/a[.= 'Blog']")
     private lateinit var blog: WebElement
 
+    @FindBy(xpath = "//ul/li/a[.= 'About']")
+    private lateinit var about: WebElement
+
     @FindBy(xpath = "//ul/li[2]/div/a")
     private lateinit var secondElementOfRepositoryList: WebElement
 
@@ -51,6 +54,11 @@ class GithubPage: Page() {
     fun clickOnBlog() {
         wait.until(ExpectedConditions.elementToBeClickable(blog))
         blog.click()
+    }
+
+    fun clickOnAbout() {
+        wait.until(ExpectedConditions.elementToBeClickable(blog))
+        about.click()
     }
 
     fun clickOnRepositoryListElement() {

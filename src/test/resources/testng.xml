@@ -2,81 +2,91 @@
 
 <suite name="TestAll">
 
-    <test name="login">
+    <test name="about">
         <classes>
-            <class name="LoginTest">
+            <class name="AboutTest">
                 <methods>
-                    <exclude name="incorrectLogin"/>
-                    <include name="correctLogin"/>
+                    <include name="aboutTest"/>
                 </methods>
             </class>
         </classes>
     </test>
 
-    <test name="blog">
-        <classes>
-            <class name="BlogTest">
-                <methods>
-                    <include name="blogTest"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
+<!--    <test name="login">-->
+<!--        <classes>-->
+<!--            <class name="LoginTest">-->
+<!--                <methods>-->
+<!--                    <exclude name="incorrectLogin"/>-->
+<!--                    <include name="correctLogin"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="repository">
-        <classes>
-            <class name="CustomRepositoryTest">
-                <methods>
-                    <include name="checkAllElementsNumber"/>
-                    <include name="checkFilesNumber"/>
-                    <include name="checkDirectoriesNumber"/>
-                    <include name="checkFiles"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
+<!--    <test name="blog">-->
+<!--        <classes>-->
+<!--            <class name="BlogTest">-->
+<!--                <methods>-->
+<!--                    <include name="blogTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="Search">
-        <classes>
-            <class name="SearchTest">
-                <methods>
-                    <include name="searchTest"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
+<!--    <test name="repository">-->
+<!--        <classes>-->
+<!--            <class name="CustomRepositoryTest">-->
+<!--                <methods>-->
+<!--                    <include name="checkAllElementsNumber"/>-->
+<!--                    <include name="checkFilesNumber"/>-->
+<!--                    <include name="checkDirectoriesNumber"/>-->
+<!--                    <include name="checkFiles"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="repositories">
-        <classes>
-            <class name="RepositoriesTest">
-                <methods>
-                    <include name="repositoryTest" />
-                    <include name="repositoryFindTest" />
-<!--                    <include name="createNewRepositoryTest" />-->
-                </methods>
-            </class>
-        </classes>
-    </test>
+<!--    <test name="Search">-->
+<!--        <classes>-->
+<!--            <class name="SearchTest">-->
+<!--                <methods>-->
+<!--                    <include name="searchTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="search">
-        <classes>
-            <class name="SearchOnStartPageTest">
-                <methods>
-                    <include name="countStarsValues" />
-                    <include name="foundByText" />
-<!--                    <include name="sortingResultNotEquals" />-->
-                </methods>
-            </class>
-        </classes>
-    </test>
+<!--    <test name="repositories">-->
+<!--        <classes>-->
+<!--            <class name="RepositoriesTest">-->
+<!--                <methods>-->
+<!--                    <include name="repositoryTest" />-->
+<!--                    <include name="repositoryFindTest" />-->
+<!--&lt;!&ndash;                    <include name="createNewRepositoryTest" />&ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="Logout">
-        <classes>
-            <class name="LogoutTest">
-                <methods>
-                    <include name="logoutTest" />
-                </methods>
-            </class>
-        </classes>
-    </test>
+<!--    <test name="search">-->
+<!--        <classes>-->
+<!--            <class name="SearchOnStartPageTest">-->
+<!--                <methods>-->
+<!--                    <include name="countStarsValues" />-->
+<!--                    <include name="foundByText" />-->
+<!--&lt;!&ndash;                    <include name="sortingResultNotEquals" />&ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Logout">-->
+<!--        <classes>-->
+<!--            <class name="LogoutTest">-->
+<!--                <methods>-->
+<!--                    <include name="logoutTest" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
