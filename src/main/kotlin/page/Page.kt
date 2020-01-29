@@ -9,7 +9,10 @@ abstract class Page {
     private val driver = AppManager.webDriver
     var wait: WebDriverWait = WebDriverWait(driver, 10)
     var shortWait: WebDriverWait = WebDriverWait(driver, 3)
-    val waitTimeout: (Long) -> Unit = { time: Long -> wait.withTimeout(Duration.ofSeconds(time))}
+    val waitTimeout: (Long) -> Unit = { time: Long ->
+        wait.withTimeout(Duration.ofSeconds(time))
+            .pollingEvery(Duration.ofMillis(200))
+            .ignoring(NoSuchElementException::class.java)}
 
     open var pageUrl: String? = null
 
